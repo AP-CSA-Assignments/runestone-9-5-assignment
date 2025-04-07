@@ -22,25 +22,14 @@ After you compile the shape classes, you only need to compile and run `Main.java
 
 # Instructions  
 
-## Problem 1
-Not all dogs like to bark, but some like to make a lot of noise! In this exercise we have a `Dog` superclass and a `LoudDog` subclass. You do not need to modify the Dog class.
+The following code contains a class called `ShoppingCart` that simulates a grocery store or an online store’s shopping cart. It has an `ArrayList` called order that you can use to add `Items` to the shopping cart. The `Item` class keeps track of the name and the price of each Item. If you run the code below, you will see that it adds 2 items to the cart and then prints out the total order.
 
-Your task is to write two override methods in the `LoudDog` class. You will override the speak method to return BARK!. You will then override the `toString` so that it returns `Clover is loud and likes to BARK!` where Clover is replaced by the `name` variable.
+In this challenge, you will add a new class called `DiscountedItem` that extends the `Item` class. The `ArrayList` of `Item` will still work since it can hold the subclasses of `Item` too! The `ShoppingCart` `printOrder` method will work with `Item` and `DiscountedItem` but note that it has an if statement that treats `DiscountedItem` differently.
 
-Create and print at least one `Dog` and one `LoudDog` in `Main` to test.
+In the `DiscountedItem` subclass,
 
-## Problem 2
-With the addition of electric cars, we have a need to create a subclass of our `Car` class. In this exercise, we are going to create the `ElectricCar` subclass so that we can override a few methods to update them to work for `ElectricCars`.
-
-The `Car` class has a field called `fuelLevel`. It represents the number of gallons left in the tank of a regular car. We’re going to reinterpret it to mean the battery percentage left in an Electric Car. Since it’s an int, to use `fuelLevel` in the `ElectricCar`, you’ll first need to convert it to a percentage by dividing by 100.
-
-The `Car` class is complete, but you need to complete the `ElectricCar` class as outlined in the starter code with comments.
-
-Once complete, use the `CarTester` to create both a `Car` and `ElectricCar` object and test these per the instructions in the `CarTester` class.
-
-## Problem 3
-There are many different types of companies out there so trying to make one class that fits them all would be a challenge. We are going to take a look at modeling out a general company with the `Company` class and then customize that class with the `OnlineCompany` subclass.
-
-The basic structure is set up for both of these classes. Your task is to complete these classes as specified in the comments of each class.
-
-Once complete, use the `CompanyTester` class to create a `Company` and `OnlineCompany` object, then print each out using the `toString()`.
+1. Add an instance variable for the discount amount.
+2. Add constructors that call the super constructor Item.
+3. Add get/set methods for discount. The get method is given below but you should modify it.
+4. Add a `toString` method that returns a string that includes a call to the super `toString` method that will print out the price as well as the discount amount using the `super.valueToString()` method to format it. You could put the discount in parentheses with a minus sign in front of it like `(- $.50)`.
+5. Uncomment the code in the main method to test adding DiscountedItems to the cart.
